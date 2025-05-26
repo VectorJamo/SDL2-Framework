@@ -19,10 +19,13 @@ public:
 	template<typename T>
 	T* GetComponent();
 
+	template<typename T>
+	bool HasComponent();
+
 };
 
 template<typename T>
-void Entity::AddComponent(T component)
+inline void Entity::AddComponent(T component)
 {
 	const std::type_info& info = typeid(T);
 	int key = info.hash_code();
@@ -40,7 +43,7 @@ void Entity::AddComponent(T component)
 }
 
 template<typename T>
-T* Entity::GetComponent()
+inline T* Entity::GetComponent()
 {
 	const std::type_info& info = typeid(T);
 	int key = info.hash_code();
@@ -56,6 +59,17 @@ T* Entity::GetComponent()
 		std::cout << "The component does not exist!" << std::endl;
 		assert(false); // Bomb the program
 	}
+}
+
+template<typename T>
+inline bool Entity::HasComponent()
+{
+	const std::type_info& info = typeid(T);
+	int key = info.hash_code();
+
+	if (m_Components.count(key) > 0)
+		return true;
+	return false;
 }
 
 #if 0

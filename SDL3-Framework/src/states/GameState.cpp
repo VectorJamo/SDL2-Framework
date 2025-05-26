@@ -17,9 +17,11 @@ void GameState::Init()
 {
 	m_Player = new Player();
 	m_Player->AddComponent<Transform>({10, 10, 50, 50});
-	m_Player->AddComponent<Velocity>({0.1f, 0.1f});
 
-	std::cout << m_Player->GetComponent<Transform>()->x << std::endl;
+	if (m_Player->HasComponent<Transform>())
+	{
+		std::cout << "Yes." << std::endl;
+	}
 }
 
 void GameState::Update()
@@ -32,6 +34,7 @@ void GameState::Update()
 			*m_IsAppRunning = false;
 		}
 	}
+
 }
 
 void GameState::Render()

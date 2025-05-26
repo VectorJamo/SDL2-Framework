@@ -4,9 +4,5 @@
 
 struct Player : public Entity
 {
-	void Move()
-	{
-		GetComponent<Transform>()->x += GetComponent<Velocity>()->dx;
-		GetComponent<Transform>()->y += GetComponent<Velocity>()->dy;
-	}
+	void Move();
 };

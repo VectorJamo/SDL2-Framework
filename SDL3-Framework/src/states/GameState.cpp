@@ -11,17 +11,12 @@ GameState::GameState(Window* window, bool* isAppRunning)
 
 GameState::~GameState()
 {
+	
 }
 
 void GameState::Init()
 {
-	m_Player = new Player();
-	m_Player->AddComponent<Transform>({10, 10, 50, 50});
 
-	if (m_Player->HasComponent<Transform>())
-	{
-		std::cout << "Yes." << std::endl;
-	}
 }
 
 void GameState::Update()

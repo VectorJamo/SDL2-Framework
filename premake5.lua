@@ -34,7 +34,7 @@ project "SDL2-Framework"
 	}
 	
 	links {
-		"SDL2", "SDL2_image", "SDL2_ttf", "SDL2_mixer"
+		"SDL2", "SDL2main", "SDL2_image", "SDL2_ttf", "SDL2_mixer"
 	}
 	
 	targetdir "bin/%{prj.name}/%{cfg.buildcfg}-%{cfg.platform}/"

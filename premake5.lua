@@ -1,4 +1,4 @@
-workspace "SDL3-Framework"
+workspace "SDL2-Framework"
 	configurations {
 	"Debug", "Release"
 	}
@@ -14,27 +14,27 @@ workspace "SDL3-Framework"
 		system "Windows"
 		architecture "x86_64"
 
-project "SDL3-Framework"
-	location "SDL3-Framework"
+project "SDL2-Framework"
+	location "SDL2-Framework"
 	
 	kind "ConsoleApp"
 	language "C++"
 	
 	files {
-		"SDL3-Framework/src/**.h",
-		"SDL3-Framework/src/**.cpp",
+		"SDL2-Framework/src/**.h",
+		"SDL2-Framework/src/**.cpp",
 	}
 	
 	includedirs {
-		"Dependencies/SDL3/include"
+		"Dependencies/SDL2/include"
 	}
 	
 	libdirs {
-		"Dependencies/SDL3/lib/x86"
+		"Dependencies/SDL2/lib/x86"
 	}
 	
 	links {
-		"SDL3", "SDL3_image"
+		"SDL2", "SDL2_image", "SDL2_ttf", "SDL2_mixer"
 	}
 	
 	targetdir "bin/%{prj.name}/%{cfg.buildcfg}-%{cfg.platform}/"

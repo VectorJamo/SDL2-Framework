@@ -1,11 +1,18 @@
 #include "Application.h"
 #include "states/GameState.h"
 
+#include "src/ui/UIManager.h"
+
 
 Application::Application(int width, int height, const char* title)
 {
 	m_Window = new Window(width, height, title);
 	m_Running = true;
+
+	if (!UIManager::InitializeUI())
+	{
+		std::cout << "Failed to initialize UI!" << std::endl;
+	}
 
 	StateManager::CurrentState = new GameState(m_Window, &m_Running);
 	StateManager::CurrentState->Init();

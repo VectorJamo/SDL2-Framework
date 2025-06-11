@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SDL3/SDL_ttf.h>
+#include <SDL_ttf.h>
 class UIManager
 {
 public:

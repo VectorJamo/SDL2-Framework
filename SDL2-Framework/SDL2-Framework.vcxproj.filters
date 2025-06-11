@@ -32,6 +32,7 @@
     <ClInclude Include="src\ui\Text.h">
       <Filter>ui</Filter>
     </ClInclude>
+    <ClInclude Include="src\ui\UIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
@@ -52,5 +53,6 @@
     <ClCompile Include="src\ui\Text.cpp">
       <Filter>ui</Filter>
     </ClCompile>
+    <ClCompile Include="src\ui\UIManager.cpp" />
   </ItemGroup>
 </Project>

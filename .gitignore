@@ -1,7 +1,7 @@
 .vs/
 bin/
-SDL3-Framework.sln
-SDL3-Framework/obj/
-SDL3-Framework/SDL3-Framework.vcxproj
-SDL3-Framework/SDL3-Framework.vcxproj.filters
-SDL3-Framework/SDL3-Framework.vcxproj.user
+SDL2-Framework.sln
+SDL2-Framework/obj/
+SDL2-Framework/SDL2-Framework.vcxproj
+SDL2-Framework/SDL2-Framework.vcxproj.filters
+SDL2-Framework/SDL2-Framework.vcxproj.user

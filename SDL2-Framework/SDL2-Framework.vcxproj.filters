@@ -33,6 +33,11 @@
       <Filter>ui</Filter>
     </ClInclude>
     <ClInclude Include="src\ui\UIManager.h" />
+    <ClInclude Include="src\audio\SoundManager.h" />
+    <ClInclude Include="src\audio\Music.h" />
+    <ClInclude Include="src\audio\SoundEffect.h" />
+    <ClInclude Include="src\input\KeyManager.h" />
+    <ClInclude Include="src\input\Keys.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
@@ -54,5 +59,14 @@
       <Filter>ui</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\UIManager.cpp" />
+    <ClCompile Include="src\audio\SoundManager.cpp" />
+    <ClCompile Include="src\audio\Music.cpp" />
+    <ClCompile Include="src\audio\SoundEffect.cpp" />
+    <ClCompile Include="src\input\KeyManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\audio\pickupCoin.wav" />
+    <Media Include="res\audio\laserShoot.wav" />
+    <Media Include="res\audio\BossMain.wav" />
   </ItemGroup>
 </Project>

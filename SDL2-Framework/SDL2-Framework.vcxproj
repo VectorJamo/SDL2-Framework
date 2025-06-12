@@ -169,7 +169,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\input\KeyManager.h" />
+    <ClInclude Include="src\audio\SoundEffect.h" />
+    <ClInclude Include="src\audio\Music.h" />
+    <ClInclude Include="src\audio\SoundManager.h" />
     <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\input\Keys.h" />
     <ClInclude Include="src\ui\UIManager.h" />
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\map\MapConstants.h" />
@@ -180,7 +185,11 @@
     <ClInclude Include="src\ui\Text.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\input\KeyManager.cpp" />
+    <ClCompile Include="src\audio\SoundEffect.cpp" />
+    <ClCompile Include="src\audio\Music.cpp" />
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\audio\SoundManager.cpp" />
     <ClCompile Include="src\ui\UIManager.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -189,6 +198,11 @@
     <ClCompile Include="src\states\StateManager.cpp" />
     <ClCompile Include="src\ui\Button.cpp" />
     <ClCompile Include="src\ui\Text.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\audio\BossMain.wav" />
+    <Media Include="res\audio\laserShoot.wav" />
+    <Media Include="res\audio\pickupCoin.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,6 +2,7 @@
 #include "states/GameState.h"
 
 #include "src/ui/UIManager.h"
+#include "src/audio/SoundManager.h"
 
 
 Application::Application(int width, int height, const char* title)
@@ -12,6 +13,10 @@ Application::Application(int width, int height, const char* title)
 	if (!UIManager::InitializeUI())
 	{
 		std::cout << "Failed to initialize UI!" << std::endl;
+	}
+	if (!SoundManager::InitializeAudio())
+	{
+		std::cout << "Failed to initialize Audio!" << std::endl;
 	}
 
 	StateManager::CurrentState = new GameState(m_Window, &m_Running);

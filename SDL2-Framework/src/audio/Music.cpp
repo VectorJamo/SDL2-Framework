@@ -47,3 +47,8 @@ void Music::Stop()
 		Mix_HaltMusic();
 	}
 }
+
+void Music::SetVolume(float percentage)
+{
+	Mix_VolumeMusic(MIX_MAX_VOLUME * percentage);
+}

@@ -25,3 +25,8 @@ void SoundEffect::PlayLooped(int loops)
 {
 	Mix_PlayChannel(-1, m_Sfx, loops);
 }
+
+void SoundEffect::SetVolume(float percentage)
+{
+	Mix_VolumeChunk(m_Sfx, MIX_MAX_VOLUME * percentage);
+}

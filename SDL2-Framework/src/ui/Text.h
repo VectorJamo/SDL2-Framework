@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SDL_ttf.h>
 #include <iostream>
 #include <string>
@@ -28,10 +30,13 @@ public:
 	void SetText(const std::string& text);
 	void SetPosition(int x, int y);
 	void SetFont(TTF_Font* font);
+	void SetTextAlpha(char alpha);
 
 	// Getters
 	inline std::string& GetString() { return m_Text; }
 	inline int GetX() { return m_X; }
 	inline int GetY() { return m_Y; }
+	inline int GetWidth() { return m_Width; }
+	inline int GetHeight() { return m_Height; }
 	inline int GetPointSize() { return  m_PointSize; }
 };

@@ -6,7 +6,7 @@ Text::Text(const std::string& text, int x, int y, int pointSize, SDL_Renderer* r
 	:m_Text(text), m_CurrentFont(nullptr), m_X(x), m_Y(y), m_PointSize(pointSize)
 {
 	m_Renderer = renderer;
-	m_CurrentFont = TTF_OpenFont("res/fonts/roboto/Roboto-Regular.ttf", pointSize);
+	m_CurrentFont = TTF_OpenFont("res/fonts/8-bit-pusab.ttf", pointSize);
 	if (m_CurrentFont == nullptr)
 	{
 		std::cout << "Failed to load font." << std::endl;
@@ -65,12 +65,17 @@ void Text::SetFont(TTF_Font* font)
 	m_Texture = CreateTexture();
 }
 
+void Text::SetTextAlpha(char alpha)
+{
+	SDL_SetTextureAlphaMod(m_Texture, alpha);
+}
+
 SDL_Texture* Text::CreateTexture()
 {
 	SDL_Surface* surface = TTF_RenderText_Blended(m_CurrentFont, m_Text.c_str(), m_Color);
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
 
-	SDL_QueryTexture(texture,NULL, NULL, &m_Width, &m_Height);
+	SDL_QueryTexture(texture, NULL, NULL, &m_Width, &m_Height);
 
 	SDL_FreeSurface(surface);
 	return texture;

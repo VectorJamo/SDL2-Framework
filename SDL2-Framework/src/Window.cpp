@@ -6,6 +6,8 @@ Window::Window(int width, int height, const char* title)
 	m_Window = SDL_CreateWindow(m_Title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_Width, m_Height, NULL);
 	m_Renderer = SDL_CreateRenderer(m_Window, -1,  NULL);
 	// TODO: Check for errors in window or renderer creation
+
+	SDL_SetRenderDrawBlendMode(m_Renderer, SDL_BLENDMODE_BLEND);
 }
 
 Window::~Window()

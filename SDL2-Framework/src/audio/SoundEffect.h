@@ -12,5 +12,6 @@ public:
 
 	void Play();
 	void PlayLooped(int loops);
+	void SetVolume(float percentage);
 };
 

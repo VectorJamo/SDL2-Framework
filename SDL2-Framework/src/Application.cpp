@@ -1,9 +1,9 @@
 #include "Application.h"
 #include "states/GameState.h"
 
-#include "src/ui/UIManager.h"
-#include "src/audio/SoundManager.h"
-
+#include "ui/UIManager.h"
+#include "audio/SoundManager.h"
+#include "utils/AssetLoader.h"
 
 Application::Application(int width, int height, const char* title)
 {
@@ -18,6 +18,7 @@ Application::Application(int width, int height, const char* title)
 	{
 		std::cout << "Failed to initialize Audio!" << std::endl;
 	}
+	AssetLoader::InitializeAssetLoader(m_Window->GetRenderer());
 
 	StateManager::CurrentState = new GameState(m_Window, &m_Running);
 	StateManager::CurrentState->Init();
@@ -38,6 +39,7 @@ void Application::Run()
 		m_Window->Clear(0, 0, 0, 255);
 
 		StateManager::CurrentState->Update();
+		UIManager::UpdateUI();
 		StateManager::CurrentState->Render();
 
 		m_Window->Display();

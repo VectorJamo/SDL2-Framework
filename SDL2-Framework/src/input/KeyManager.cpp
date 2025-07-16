@@ -36,6 +36,6 @@ bool KeyManager::IsKeyPressed(char key)
 
 bool KeyManager::IsKeyReleased(char key)
 {
-	return m_Keys[key];
+	return !m_Keys[key];
 }
 

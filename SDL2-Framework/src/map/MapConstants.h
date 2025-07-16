@@ -13,3 +13,9 @@ namespace WindowConstants {
 	inline constexpr int ViewportWidth = MapConstants::NumCols * MapConstants::TileWidth;
 	inline constexpr int ViewportHeight = MapConstants::NumRows * MapConstants::TileHeight;
 }
+
+namespace WindowDimensions {
+	inline constexpr int Width = 800;
+	inline constexpr int Height = 600;
+	inline constexpr const char* Title = "2D Framework";
+}

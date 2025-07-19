@@ -1,8 +1,10 @@
 #include "UIManager.h"
 #include "Button.h"
+#include "InputBox.h"
 #include "input/MouseManager.h"
 
 std::vector<Button*> UIManager::m_TrackedButtons;
+std::vector <InputBox*> UIManager::m_TrackedInputBoxes;
 
 bool UIManager::InitializeUI()
 {
@@ -15,11 +17,12 @@ bool UIManager::InitializeUI()
     return true;
 }
 
-void UIManager::UpdateUI()
+void UIManager::UpdateUI(SDL_Event* ev)
 {
 	int mx, my;
 	SDL_GetMouseState(&mx, &my);
 
+    // Update Buttons
     for (auto& button : m_TrackedButtons)
     {
         button->isMouseOver = false;
@@ -43,6 +46,12 @@ void UIManager::UpdateUI()
             button->isMouseOver = false;
         }
     }
+
+    // Update Input Boxes
+    for (auto& inputBox : m_TrackedInputBoxes)
+    {
+        inputBox->Update(ev);
+    }
 }
 
 void UIManager::AddButton(Button* button)
@@ -50,7 +59,18 @@ void UIManager::AddButton(Button* button)
     m_TrackedButtons.push_back(button);
 }
 
+void UIManager::AddInputBox(InputBox* inputBox)
+{
+    m_TrackedInputBoxes.push_back(inputBox);
+}
+
 void UIManager::ClearButtons()
 {
     m_TrackedButtons.clear();
+}
+
+void UIManager::ClearUI()
+{
+    m_TrackedButtons.clear();
+    m_TrackedInputBoxes.clear();
 }

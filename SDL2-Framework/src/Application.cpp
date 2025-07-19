@@ -1,7 +1,6 @@
 #include "Application.h"
 #include "states/GameState.h"
 
-#include "ui/UIManager.h"
 #include "audio/SoundManager.h"
 #include "utils/AssetLoader.h"
 
@@ -39,7 +38,6 @@ void Application::Run()
 		m_Window->Clear(0, 0, 0, 255);
 
 		StateManager::CurrentState->Update();
-		UIManager::UpdateUI();
 		StateManager::CurrentState->Render();
 
 		m_Window->Display();

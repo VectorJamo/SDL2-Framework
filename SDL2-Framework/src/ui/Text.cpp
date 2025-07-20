@@ -75,8 +75,13 @@ SDL_Texture* Text::CreateTexture()
 	SDL_Surface* surface = TTF_RenderText_Blended(m_CurrentFont, m_Text.c_str(), m_Color);
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
 
-	SDL_QueryTexture(texture, NULL, NULL, &m_Width, &m_Height);
-
+	if (m_Text.length() == 0)
+	{
+		m_Width = 0;
+		m_Height = 0;
+	}else{
+		SDL_QueryTexture(texture, NULL, NULL, &m_Width, &m_Height);
+	}
 	SDL_FreeSurface(surface);
 	return texture;
 }

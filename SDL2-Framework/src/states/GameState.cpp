@@ -7,7 +7,7 @@
 GameState::GameState(Window* window, bool* isAppRunning)
 	:StateManager(window, isAppRunning)
 {
-	m_InputBox = new InputBox(vec2(50.0f, 50.0f), vec2(100.0f, 40.0f), m_Window->GetRenderer());
+	m_InputBox = new InputBox(vec2(50.0f, 50.0f), vec2(200.0f, 40.0f), m_Window->GetRenderer());
 	UIManager::AddInputBox(m_InputBox);
 }
 
@@ -31,9 +31,13 @@ void GameState::Update()
 		}
 		
 		KeyManager::UpdateKeyState(&ev);
-		UIManager::UpdateUI(&ev);
 		MouseManager::UpdateMouseState(&ev);
+
+		UIManager::UpdateUI(&ev);
 	}
+
+	m_InputBox->UpdateVisuals();
+
 }
 
 void GameState::Render()

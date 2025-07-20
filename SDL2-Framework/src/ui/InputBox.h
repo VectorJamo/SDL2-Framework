@@ -15,6 +15,9 @@ private:
 	vec2 m_Position, m_Dimension;
 	static constexpr int m_TextOffset = 5;
 
+	// For cursor
+	int m_AlphaCounter, m_Increment;
+
 public:
 	bool isActive;
 
@@ -23,6 +26,9 @@ public:
 	~InputBox();
 
 	void Update(SDL_Event* ev);
+	void UpdateVisuals();
 	void Render(SDL_Renderer* renderer);
+
+	std::string& GetString();
 };
 
